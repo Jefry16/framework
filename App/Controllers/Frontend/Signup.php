@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Frontend;
 
 use \Core\View;
 use \App\Models\User;
@@ -13,7 +13,6 @@ use \App\Modules\Auth;
  */
 class Signup extends \Core\Controller
 {
-
     /**
      * Show the index page
      *
@@ -32,11 +31,8 @@ class Signup extends \Core\Controller
         $user = new User($_POST);
 
         if ($user->save()) {
-
             $this->redirect('/signup/success');
-            
         } else {
-
             View::renderTemplate('Signup/index.html', ['user' => $user]);
         }
     }

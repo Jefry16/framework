@@ -1,18 +1,16 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Frontend;
 
 use \Core\View;
-use \App\Models\User;
 
 /**
  * Home controller
  *
  * PHP version 7.0
  */
-class Blog extends \Core\Controller
+class Home extends \Core\Controller
 {
-
     /**
      * Show the index page
      *
@@ -20,7 +18,6 @@ class Blog extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('Login/index.html');
+        View::renderTemplate('Home/index.html');
     }
-   
 }

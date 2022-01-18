@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Controllers;
-
-
+namespace App\Controllers\Frontend;
 
 /**
  * Ajax controller
@@ -11,6 +9,4 @@ namespace App\Controllers;
  */
 class Ajax extends \Core\Controller
 {
-
-
 }

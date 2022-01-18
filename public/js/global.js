@@ -9,5 +9,3 @@ function togglePasswordField(field) {
   field.setAttribute("type", "password");
 }
 
-
-document.addEventListener("load", console.log("finished loading"));
