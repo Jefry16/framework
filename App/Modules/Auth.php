@@ -14,7 +14,8 @@ class Auth
 {
     public static function login($user, $rememberLogin)
     {
-        $_SESSION['user_id'] = $user->id;
+        $_SESSION['admin_id'] = $user->id;
+
 
         session_regenerate_id(true);
 
@@ -52,15 +53,16 @@ class Auth
 
     public static function getCurrentLoggedInUser()
     {
-        if (isset($_SESSION['user_id'])) {
-            return User::findById($_SESSION['user_id']);
+        if (isset($_SESSION['admin_id'])) {
+            return User::findById($_SESSION['admin_id']);
         } else {
             $cookie_for_login = $_COOKIE['remember_me'] ?? false;
 
             $login_data = Login::getLoginFronCookie($cookie_for_login);
 
             if (is_object($login_data) && strtotime($login_data->expires_at) > time()) {
-                $_SESSION['user_id'] = $login_data->user_id;
+                $_SESSION['admin_id'] = $login_data->user_id;
+
             }
         }
     }

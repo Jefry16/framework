@@ -107,7 +107,7 @@ abstract class Controller
 
     protected function redirectWhenUserLoggedIn($url = '/')
     {
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['admin_id'])) {
 
             header('Location: http://' . $_SERVER['HTTP_HOST'] . $url, true, 303);
 
